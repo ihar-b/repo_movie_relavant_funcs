@@ -164,17 +164,6 @@ void calculateProfit(vector<movie> movies, int day, int count){
 }
         
 
-/*string title;
-string comment;
-int ranking;
-int id;
-int releaseDate;
-int characterNum;
-int ticketPrice;
-type filmType;*/
-
-
-        
 
 int main(){
     movie film1 = movie("aot","incredible",1,12,2012,60,100,2,HORROR);
