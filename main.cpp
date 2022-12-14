@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-using namespace std;
 
+using namespace std;
 
     enum type{
         ACTION = 1,
@@ -14,7 +14,8 @@ using namespace std;
         ROMANCE = 7,
         THRILLER =8
     };
-class movie{
+
+class Movie{
 private:
     string title;
     string comment;
@@ -25,11 +26,12 @@ private:
     int ticketPrice;
     type filmType;
     int day;
+
 public:
-    movie(){
+    Movie(){
         
     }
-    movie( string title,
+    Movie( string title,
           string comment,
           int ranking,
           int id,
@@ -49,7 +51,7 @@ public:
         this->filmType=filmType;
         this->day = day;
     }
-    ~movie(){
+    ~Movie(){
         
     }
     string getTitle(){
@@ -90,34 +92,34 @@ public:
     
         
     };
-class cinema{
+class Cinema{
 private:
     string name;
     string location;
     
 public:
-    vector<movie> movies;
+    vector<Movie> movies;
     
     
-    cinema(){
+    Cinema(){
         
     }
     
-    cinema(string name, string location){
+    Cinema(string name, string location){
         this->name= name;
         this->location= location;
     }
     
-    ~cinema(){
+    ~Cinema(){
         
     }
-    void addMovie(movie film1){
+    void addMovie(Movie film1){
         movies.push_back(film1);
     }
     string getName( ){
         return name;
     }
-    string getlocation( ){
+    string getLocation( ){
         return location;
     }
     
@@ -152,7 +154,7 @@ public:
     }
 };
 
-void calculateProfit(vector<movie> movies, int day, int count){
+void calculateProfit(vector<Movie> movies, int day, int count){
     int profit = 0;
     for(int i = 0; i<count; i++){
         if(movies[i].getDay()== day){
@@ -166,11 +168,11 @@ void calculateProfit(vector<movie> movies, int day, int count){
 
 
 int main(){
-    movie film1 = movie("aot","incredible",1,12,2012,60,100,2,HORROR);
-    movie film2 = movie("batman","fine",1,12,2009,50,50,3,COMEDY);
-    movie film3 = movie("superman","good",1,12,2014,50,25,4,THRILLER);
-    movie film4 = movie("marvel","bad",1,12,2015,50,75,2,ACTION);
-    cinema forum;
+    Movie film1 = Movie("aot","incredible",1,12,2012,60,100,2,HORROR);
+    Movie film2 = Movie("batman","fine",1,12,2009,50,50,3,COMEDY);
+    Movie film3 = Movie("superman","good",1,12,2014,50,25,4,THRILLER);
+    Movie film4 = Movie("marvel","bad",1,12,2015,50,75,2,ACTION);
+    Cinema forum;
     forum.addMovie(film1);
     forum.addMovie(film2);
     forum.addMovie(film3);
